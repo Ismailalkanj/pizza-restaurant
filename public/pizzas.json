@@ -1,0 +1,59 @@
+{
+    "products": [
+      {
+        "name": "Pizza Margherita",
+        "description": "Klassische Pizza Margherita mit Tomatensoße, Mozzarella und Basilikum",
+        "price": 8.99,
+        "imageUrl": "https://images.unsplash.com/photo-1571207133905-e63101f15248?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "name": "Pizza Pepperoni",
+        "description": "Pizza Pepperoni mit scharfer Pepperoni-Salami und würzigem Käse",
+        "price": 9.99,
+        "imageUrl": "https://images.unsplash.com/photo-1542282811-943ef1a977c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+      },
+      {
+        "name": "Pizza Romana",
+        "description": "Pizza Romana mit Ananas, Schinken und Käse",
+        "price": 10.99,
+        "imageUrl": "https://images.unsplash.com/photo-1552539618-7eec9b4d1796?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=802&q=80"
+      },
+      {
+        "name": "Pizza Napoli",
+        "description": "Pizza Napoli mit scharfer Pepperoni-Salami und würzigem Käse",
+        "price": 9.99,
+        "imageUrl": "https://plus.unsplash.com/premium_photo-1675103910740-533375dd3864?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "name": "Pizza Veggie",
+        "description": "Pizza Veggie mit frischem Gemüse und würzigem Käse",
+        "price": 9.99,
+        "imageUrl": "https://images.unsplash.com/photo-1589840700256-f78d6ed1ae21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+      },
+      {
+        "name": "Pizza Lahmacun",
+        "description": "Pizza Lahmacun mit würziger Hackfleischsoße und frischem Gemüse",
+        "price": 9.99,
+        "imageUrl": "https://images.unsplash.com/photo-1620374645310-f9d97e733268?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        "name": "Pizza American",
+        "description": "Pizza American mit saftigem Rinderhack, Zwiebeln und Barbecuesoße",
+        "price": 9.99,
+        "imageUrl": "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80"
+      },
+      {
+        "name": "Pizza Bianca",
+        "description": "Pizza Bianca mit cremigem Mozzarella, Knoblauch und Olivenöl",
+        "price": 9.99,
+        "imageUrl": "https://images.unsplash.com/photo-1618213957768-7789409b9dd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+      },
+      {
+        "name": "Pizza Paprika",
+        "description": "Pizza Paprika mit gegrillter Paprika, Oliven und Feta-Käse",
+        "price": 9.99,
+        "imageUrl": "https://images.unsplash.com/photo-1589840700256-f78d6ed1ae21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHBpenphc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+      }
+    ]
+  }
+  
