@@ -32,7 +32,8 @@ const CartStateContext = ({ children }) => {
   };
 
   const removeFromCart = async (product_id) => {
-    const { data } = axios.get(`${API_URL}cart/removeProduct/${product_id}`);
+    const { data } = await axios.get(`${API_URL}cart/removeProduct/${product_id}`);
+
     setCart(data);
   };
 

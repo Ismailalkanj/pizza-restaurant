@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import ProductCard from './ProductCard';
+import { CartContext } from '@/contexts/CartContext';
 
 const responsive = {
   desktop: {
@@ -22,21 +23,11 @@ const responsive = {
 };
 
 const Test = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:8000/api/products/all')
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching pizzas data:', error);
-      });
-  }, []);
+  const { products } = useContext(CartContext);
 
   return (
     <div className="my-16 px-4">
+      {products && 
       <Carousel
         className="custom-carousel"
         responsive={responsive}
@@ -55,7 +46,7 @@ const Test = () => {
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-10-px px-7"
       >
-        {products.map((product, index) => (
+        {products && products.map((product, index) => (
           <ProductCard
             key={index}
             imageSrc={product['img_url']}
@@ -66,6 +57,7 @@ const Test = () => {
           />
         ))}
       </Carousel>
+}
     </div>
   );
 };

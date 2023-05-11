@@ -1,5 +1,4 @@
 import { CartContext } from "@/contexts/CartContext";
-import axios from "axios";
 import Image from "next/image";
 import { useContext } from "react";
 
