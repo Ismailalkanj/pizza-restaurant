@@ -10,11 +10,13 @@ const CartStateContext = ({ children }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
   const [cart, setCart] = useState(null);
+  const [products, setProducts] = useState(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
-    if(cart === null)
-        updateCartData();
+    if (cart === null) updateCartData();
+
+    if (products === null) updateProducts();
   }, []);
 
   const getCartData = async () => {
@@ -25,7 +27,7 @@ const CartStateContext = ({ children }) => {
 
   const updateCartData = async () => {
     const { data } = await axios.get(`${API_URL}cart/all`);
-    console.log(data);
+
     setCart(data);
   };
 
@@ -60,13 +62,24 @@ const CartStateContext = ({ children }) => {
 
   const hideCart = () => {
     setIsCartOpen(false);
-  }
+  };
 
   const showCart = () => {
+    console.log("opening");
     setIsCartOpen(true);
-  }
+  };
 
+  const getProducts = async () => {
+    const { data } = await axios.get(`${API_URL}products/all`);
 
+    return data;
+  };
+
+  const updateProducts = async () => {
+    const products = await getProducts();
+
+    setProducts(products);
+  };
   return (
     <CartContext.Provider
       value={{
@@ -79,7 +92,9 @@ const CartStateContext = ({ children }) => {
         getCartTotal,
         isCartOpen,
         showCart,
-        hideCart
+        hideCart,
+        getProducts,
+        products,
       }}
     >
       {children}
