@@ -10,6 +10,7 @@ const CartStateContext = ({ children }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
   const [cart, setCart] = useState(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     if(cart === null)
@@ -57,6 +58,15 @@ const CartStateContext = ({ children }) => {
     }, 0);
   };
 
+  const hideCart = () => {
+    setIsCartOpen(false);
+  }
+
+  const showCart = () => {
+    setIsCartOpen(true);
+  }
+
+
   return (
     <CartContext.Provider
       value={{
@@ -67,6 +77,9 @@ const CartStateContext = ({ children }) => {
         addToCart,
         getItemCount,
         getCartTotal,
+        isCartOpen,
+        showCart,
+        hideCart
       }}
     >
       {children}
