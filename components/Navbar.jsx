@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { CartContext } from "@/contexts/CartContext.js";
 
 const Navbar = () => {
-  const { cart, getItemCount } = useContext(CartContext);
+  const { cart, getItemCount, showCart } = useContext(CartContext);
   return (
     <>
       <section
@@ -60,8 +60,9 @@ const Navbar = () => {
         <AiOutlineShoppingCart
           size={40}
           className="ml-auto items-center text-white invisible md:visible"
+          onClick={() => showCart()}
         />
-        <div className="bg-white h-6 w-6 text-center text-red-500 rounded-full  invisible md:visible">
+        <div className="bg-white h-6 w-6 text-center text-red-500 rounded-full  invisible md:visible" onClick={() => showCart()}>
           {getItemCount()}
         </div>
         <HamburgerMenu />
