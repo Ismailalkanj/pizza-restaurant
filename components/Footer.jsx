@@ -11,7 +11,7 @@ const Footer = () => {
           Pizzastraße 12, 31139, Hildesheim
         </p>
       </div>
-      <div>Foodspeedy</div>
+      <div>Foodisolutions</div>
     </footer>
   );
 };
