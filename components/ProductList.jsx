@@ -1,8 +1,11 @@
 import "react-multi-carousel/lib/styles.css";
 import CategoriesCarousel from "./CategoriesCarousel";
 import PizzaCarousel from "./PizzaCarousel";
+import { useState } from "react";
 
 const ProductList = () => {
+  
+
   return (
     <>
       <div className="text-center mt-36 ">
