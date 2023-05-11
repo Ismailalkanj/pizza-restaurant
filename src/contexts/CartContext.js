@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const CartContext = createContext();
 
 export const useCart = () => useContext(AuthContext);
-const API_URL = "http://localhost:8000/api/";
+const API_URL = "https://ismail-api.onrender.com/";
 
 const CartStateContext = ({ children }) => {
   const [error, setError] = useState(null);

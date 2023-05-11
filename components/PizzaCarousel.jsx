@@ -25,7 +25,7 @@ const Test = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/products/all')
+    fetch('https://ismail-api.onrender.com/api/products/all')
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
