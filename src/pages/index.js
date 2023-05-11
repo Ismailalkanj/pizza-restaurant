@@ -5,10 +5,13 @@ import styles from "@/styles/Home.module.css";
 import Layout from "../../components/Layout";
 import ProductCard from "../../components/ProductCard";
 import ProductList from "../../components/ProductList";
+import Cart from "../../components/Cart";
+import CartStateContext from "../contexts/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -17,7 +20,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ProductList />
+      
+        <ProductList />
+        
+      
     </>
   );
 }

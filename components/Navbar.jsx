@@ -4,8 +4,11 @@ import { GiFullPizza } from "react-icons/gi";
 import HamburgerMenu from "../components/HamburgerMenu.jsx";
 import { faBars, FaTimes } from "react-icons/fa";
 import Link from "next/link.js";
+import { useContext } from "react";
+import { CartContext } from "@/contexts/CartContext.js";
 
 const Navbar = () => {
+  const { cart, getItemCount } = useContext(CartContext);
   return (
     <>
       <section
@@ -59,7 +62,7 @@ const Navbar = () => {
           className="ml-auto items-center text-white invisible md:visible"
         />
         <div className="bg-white h-6 w-6 text-center text-red-500 rounded-full  invisible md:visible">
-          2
+          {getItemCount()}
         </div>
         <HamburgerMenu />
       </section>

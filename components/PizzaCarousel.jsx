@@ -25,10 +25,10 @@ const Test = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('/pizzas.json')
+    fetch('http://localhost:8000/api/products/all')
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data.products);
+        setProducts(data);
       })
       .catch((error) => {
         console.error('Error fetching pizzas data:', error);
@@ -58,10 +58,11 @@ const Test = () => {
         {products.map((product, index) => (
           <ProductCard
             key={index}
-            imageSrc={product.imageUrl}
+            imageSrc={product['img_url']}
             title={product.name}
             description={product.description}
             price={product.price}
+            id={product.id}
           />
         ))}
       </Carousel>
