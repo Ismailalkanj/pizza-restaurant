@@ -14,7 +14,7 @@ const Cart = () => {
   }
 
   return (
-    <div className={`${getClass()} fixed right-10 z-40 top-[7rem] bg-white border border-red-600`}>
+    <div className={`${getClass()} fixed right-10 z-[9000] top-[7rem] bg-white border border-red-600`}>
       <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
         <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
           <div className="flex items-start justify-between">
