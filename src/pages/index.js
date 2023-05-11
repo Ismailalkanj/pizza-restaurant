@@ -7,6 +7,7 @@ import ProductCard from "../../components/ProductCard";
 import ProductList from "../../components/ProductList";
 import Cart from "../../components/Cart";
 import CartStateContext from "../contexts/CartContext";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
