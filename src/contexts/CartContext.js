@@ -56,9 +56,11 @@ const CartStateContext = ({ children }) => {
   const getCartTotal = () => {
     if (!cart) return 0;
 
-    return cart.reduce((accumulator, cartItem) => {
+    const total = cart.reduce((accumulator, cartItem) => {
       return accumulator + parseFloat(cartItem.price) * cartItem.quantity;
     }, 0);
+
+    return total.toFixed(2)
   };
 
   const hideCart = () => {
