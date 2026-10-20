@@ -1,9 +1,9 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
-export const useCart = () => useContext(AuthContext);
+export const useCart = () => useContext(CartContext);
 const API_URL = "https://ismail-api.onrender.com/api/";
 
 
