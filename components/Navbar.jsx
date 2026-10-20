@@ -1,74 +1,24 @@
-import { BsSearch, BsTelephone } from "react-icons/bs";
+import { useContext, useState } from "react";
+import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GiFullPizza } from "react-icons/gi";
-import HamburgerMenu from "../components/HamburgerMenu.jsx";
-import { faBars, FaTimes } from "react-icons/fa";
-import Link from "next/link.js";
-import { useContext } from "react";
-import { CartContext } from "@/contexts/CartContext.js";
+import { CartContext } from "@/contexts/CartContext";
 
-const Navbar = () => {
-  const { cart, getItemCount, showCart } = useContext(CartContext);
+export default function Navbar() {
+  const { getItemCount, showCart } = useContext(CartContext);
+  const [open, setOpen] = useState(false);
+  const links = [{href:"/",label:"Home"},{href:"/speisekarte",label:"Menu"},{href:"/contact",label:"Contact"}];
   return (
-    <>
-      <section
-        id="navbar"
-        className=" fixed top-0 z-10 w-full h-28  bg-green-500 px-6 items-center flex justify-between custome-bg rounded- drop-shadow-xl "
-      >
-        <div className="flex  w-2/12 items-center text-white ">
-          <div className="ml-0 mr-2">
-            <BsTelephone
-              size={20}
-              color="red"
-              className="bg-white rounded-full w-14 h-14 py-3"
-            />
-          </div>
-          <div>
-            <div className="uppercase">Order Now</div>
-            <div className="uppercase">123456 78</div>
-          </div>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#eadcc9] bg-[#fffaf1]/95 backdrop-blur-md">
+      <nav aria-label="Main navigation" className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+        <Link href="/" className="flex items-center gap-2 text-2xl font-black tracking-tight text-[#203d2a]" onClick={()=>setOpen(false)}><GiFullPizza className="text-[#d94f33]" size={33}/> FORNO<span className="text-[#d94f33]">.</span></Link>
+        <div className="hidden items-center gap-9 md:flex">{links.map(link=><Link key={link.href} href={link.href} className="text-sm font-bold uppercase tracking-wider text-[#344535] transition hover:text-[#d94f33]">{link.label}</Link>)}</div>
+        <div className="flex items-center gap-3">
+          <button type="button" onClick={showCart} aria-label={`Open cart with ${getItemCount()} items`} className="relative flex h-11 w-11 items-center justify-center rounded-full border border-[#e3d4bd] bg-white text-[#203d2a] transition hover:border-[#d94f33] hover:text-[#d94f33]"><AiOutlineShoppingCart size={23}/><span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#d94f33] px-1 text-xs font-bold text-white">{getItemCount()}</span></button>
+          <button type="button" aria-label={open?"Close menu":"Open menu"} aria-expanded={open} onClick={()=>setOpen(!open)} className="flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-full border border-[#e3d4bd] md:hidden"><span className="h-0.5 w-5 bg-[#203d2a]"/><span className="h-0.5 w-5 bg-[#203d2a]"/><span className="h-0.5 w-5 bg-[#203d2a]"/></button>
         </div>
-
-        <div className="text-white w-8/12 invisible md:visible">
-          <ul className="flex justify-between items-center navbar-list ">
-            <li className="hover:text-red-600 hover:bg-white rounded-full p-4 text-lg">
-              <Link href="/">Homepage</Link>
-            </li>
-            {/* <li className="hover:text-red-600 hover:bg-white rounded-full p-4">Products</li> */}
-            <li className="hover:text-red-600 hover:bg-white rounded-full p-4 text-lg">
-              <Link href="/speisekarte">Speisekarte</Link>
-            </li>
-            <GiFullPizza size={100} color="white" />
-            <li className="hover:text-red-600 hover:bg-white rounded-full p-4 text-lg">
-              <Link href="/contact">Contact us</Link>
-            </li>
-            
-            <li className="bg-white rounded-full p-2 text-md font-medium  flex items-center ">
-              <input
-                className="outline-none text-gray-600"
-                placeholder="Search"
-              ></input>
-              {/* <BsSearch className="text-gray-600"/> */}
-              <BsSearch className="text-black" />
-            </li>
-
-            {/* <li className="hover:text-red-600 hover:bg-white rounded-full p-4">Login</li> */}
-          </ul>
-        </div>
-        <div className="text-white w-1/12 items-center flex"></div>
-
-        <AiOutlineShoppingCart
-          size={40}
-          className="ml-auto items-center text-white invisible md:visible"
-          onClick={() => showCart()}
-        />
-        <div className="bg-white h-6 w-6 text-center text-red-500 rounded-full  invisible md:visible" onClick={() => showCart()}>
-          {getItemCount()}
-        </div>
-        <HamburgerMenu />
-      </section>
-    </>
+      </nav>
+      {open && <div className="border-t border-[#eadcc9] bg-[#fffaf1] p-5 md:hidden">{links.map(link=><Link key={link.href} href={link.href} onClick={()=>setOpen(false)} className="block rounded-xl px-4 py-3 font-semibold text-[#203d2a] hover:bg-[#f5ebd9]">{link.label}</Link>)}</div>}
+    </header>
   );
-};
-
-export default Navbar;
+}
